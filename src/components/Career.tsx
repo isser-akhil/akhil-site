@@ -51,7 +51,7 @@ export function Career() {
                       key={j}
                       className="text-muted text-sm leading-relaxed flex items-start gap-2.5"
                     >
-                      <span className="text-accent/70 mt-[7px] shrink-0 block w-1.5 h-1.5 rounded-full bg-accent/40" />
+                      <span className="mt-[7px] shrink-0 block w-1.5 h-1.5 rounded-full bg-accent/40" />
                       {item}
                     </li>
                   ))}

@@ -6,7 +6,7 @@ import { MenuIcon, CloseIcon } from "./icons";
 const navLinks = [
   { href: "#work", label: "Work" },
   { href: "#career", label: "Career" },
-  { href: "#skills", label: "Skills" },
+  { href: "#skills", label: "How I Lead" },
   { href: "/writing", label: "Writing" },
 ];
 
@@ -50,20 +50,14 @@ export function Nav() {
       >
         <a
           href="/"
-          className="group flex items-center gap-3 text-heading font-semibold tracking-tight text-sm uppercase"
+          className="group flex items-center gap-3 text-heading font-semibold tracking-tight text-sm"
         >
           <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-amber-800 flex items-center justify-center text-amber-100 text-xs font-bold shadow-sm group-hover:shadow-md transition-shadow duration-200">
             AS
           </span>
-          <span className="hidden sm:inline">
-            Akhil Sharma{" "}
-            <span className="text-muted font-normal">
-              / Engineering Leader
-            </span>
-          </span>
+          <span className="hidden sm:inline">Akhil Sharma</span>
         </a>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <a
@@ -82,7 +76,6 @@ export function Nav() {
           </a>
         </div>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden p-2 -mr-2 text-heading rounded-lg hover:bg-foreground/5 transition-colors duration-200"
           onClick={() => setOpen(!open)}
@@ -93,7 +86,6 @@ export function Nav() {
         </button>
       </div>
 
-      {/* Mobile drawer overlay */}
       <div
         className={`md:hidden fixed inset-0 top-0 z-40 transition-all duration-300 ${
           open ? "visible opacity-100" : "invisible opacity-0"
@@ -109,7 +101,7 @@ export function Nav() {
           }`}
         >
           <div className="flex items-center justify-between px-6 h-20 border-b border-divider/30">
-            <span className="text-heading font-semibold text-sm uppercase">
+            <span className="text-heading font-semibold text-sm">
               Menu
             </span>
             <button

@@ -7,14 +7,11 @@ export function FeaturedWork() {
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <p className="text-accent font-medium text-sm uppercase tracking-widest mb-3">
-            Featured Work
+            Selected Work
           </p>
-          <h2 className="text-heading text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            Concept to Impact
+          <h2 className="text-heading text-3xl sm:text-4xl font-bold tracking-tight mb-14">
+            Projects &amp; Impact
           </h2>
-          <p className="text-muted text-lg mb-14 max-w-xl">
-            The projects I led that had the biggest business impact.
-          </p>
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (

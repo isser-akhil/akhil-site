@@ -14,9 +14,9 @@ export interface Role {
   highlights: string[];
 }
 
-export interface SkillGroup {
-  label: string;
-  items: string[];
+export interface Principle {
+  title: string;
+  description: string;
 }
 
 export interface Testimonial {
@@ -38,43 +38,85 @@ export const projects: Project[] = [
     tag: "AI Platform",
     title: "MCP Server for Enterprise Knowledge Graphs",
     description:
-      "Directed the development of Schema App's MCP Server — a system that lets enterprise customers expose their Content Knowledge Graph to major AI assistants. Shaped the technical design for the auth layer, permissioned access, and rate limiting. One of the first production MCP integrations in the structured data space.",
+      "Led the team that shipped Schema App's MCP Server, a secure gateway that exposes enterprise Content Knowledge Graphs to AI assistants including ChatGPT, Copilot, Claude, and Gemini. Designed the auth layer, permissioned entity access, and rate limiting. One of the first production MCP integrations in the structured data space.",
     pills: ["Enterprise AI", "Auth Design", "Production MCP"],
   },
   {
+    tag: "AI Platform",
+    title: "Entity Hub for AI Search Optimization",
+    description:
+      "Directed engineering for Schema App's Entity Hub, a product that lets enterprise marketing teams identify, manage, and optimize entities across their content at scale. Integrated Google Search Console data with entity-level performance analytics so teams could measure AI search visibility per entity.",
+    pills: ["Entity SEO", "GSC Integration", "Knowledge Graphs"],
+  },
+  {
+    tag: "Agentic AI",
+    title: "NLWeb Integration for Agentic Search",
+    description:
+      "Oversaw the integration of NLWeb endpoints into Schema App's platform, enabling enterprise customers to expose their Content Knowledge Graph to agentic search experiences. Built the connection between structured Schema Markup and natural language interfaces, positioning the product for the shift from traditional search to agent-driven discovery.",
+    pills: ["NLWeb", "Agentic Search", "Schema.org"],
+  },
+  {
     tag: "AI / ML",
-    title: "RAG Pipeline — LangChain & AWS Bedrock",
+    title: "RAG Pipeline with LangChain and AWS Bedrock",
     description:
       "Led the team that built a RAG retrieval pipeline over the knowledge graph using LangChain, vector embeddings, and AWS Bedrock. Directed chunking strategies and reranking logic across 50K+ entities, with Langfuse for LLM evaluation, reducing hallucination in customer-facing AI integrations.",
     pills: ["50K+ Entities", "LLM Eval", "Langfuse"],
   },
   {
-    tag: "Cloud Migration",
-    title: "$1.2M Annual Savings — AWS Migration",
+    tag: "Agentic AI",
+    title: "BDR Agent Army for Autonomous Outbound",
     description:
-      "Owned the migration of the core appraisal engine from on-premise to AWS at TNGOC. A 14-month initiative that moved 6 core services to cloud, cut annual operating costs by $1.2M, and improved platform uptime from 99.2% to 99.85%.",
+      "Architected and deployed a fleet of AI-powered BDR agents that autonomously research prospects, personalize outreach, and manage multi-step email sequences. Integrated intent signals, CRM enrichment, and LLM-generated messaging to build pipeline at scale without growing headcount.",
+    pills: ["AI Agents", "Pipeline Gen", "LLM Outbound"],
+  },
+  {
+    tag: "Agentic AI",
+    title: "Chief of Staff Agent for Executive Workflows",
+    description:
+      "Built an agentic workflow system that acts as an AI chief of staff for engineering leadership. Triages Slack threads, summarizes PRs and incidents, drafts weekly stakeholder updates, and flags blockers across teams. Reduced exec overhead on status-gathering by 60%.",
+    pills: ["Workflow Agent", "Slack Integration", "Exec Automation"],
+  },
+  {
+    tag: "AI Automation",
+    title: "Techcom DRS SiVA Virtual Agent for Banking",
+    description:
+      "Helped build Techcom's DRS SiVA, an omni-channel virtual agent for Canadian financial institutions. Handles customer identification, payment processing, inquiry resolution, and next-best-action recommendations in multiple languages, 24/7. Launched to production across banking and credit union clients.",
+    pills: ["Virtual Agent", "Fintech", "Omni-Channel"],
+  },
+  {
+    tag: "AI / ML",
+    title: "Techcom Predictive Next-Best-Action Engine",
+    description:
+      "Helped build Techcom's predictive next-best-action engine, combining reinforcement learning, causal AI, and customer lifecycle data to recommend the most effective action at each stage of the lending journey. Integrated with AI-prioritized worklists to operationalize model outputs across collections, retention, and cross-sell.",
+    pills: ["Next-Best-Action", "Reinforcement Learning", "Fintech AI"],
+  },
+  {
+    tag: "Cloud Migration",
+    title: "$1.2M Annual Savings with AWS Migration",
+    description:
+      "Owned the migration of TNGOC's core appraisal engine from on-premise to AWS. A 14-month initiative that moved 6 core services to cloud, cut annual operating costs by $1.2M, and improved platform uptime from 99.2% to 99.85%.",
     pills: ["6 Services", "14 Months", "99.85% Uptime"],
   },
   {
     tag: "Compliance",
-    title: "SOC 2 Type II + KY3P — From Scratch",
+    title: "SOC 2 Type II and KY3P from Scratch",
     description:
-      "Owned Schema App's SOC 2 Type II compliance program end to end — gap analysis, remediation across access controls, logging, and incident response, and managed the external audit. Also led KY3P compliance for major US banking clients.",
+      "Owned Schema App's SOC 2 Type II compliance program end to end. Gap analysis, remediation across access controls, logging, and incident response, and managed the external audit. Also led KY3P compliance for major US banking clients.",
     pills: ["SOC 2 Type II", "KY3P", "Full Ownership"],
   },
   {
-    tag: "AI Automation",
-    title: "GPT-Powered Customer Support",
-    description:
-      "Responsible for integrating GPT-based automation into Techcom's customer support workflow. Reduced median first-response time from over 3 hours to under 30 minutes, laying the technical foundation for their later virtual agent product.",
-    pills: ["3hrs → 30min", "GPT", "Support Automation"],
-  },
-  {
     tag: "Search / SEO",
-    title: "19.7% AI Overview Uplift — Case Study",
+    title: "19.7% AI Overview Uplift (Case Study)",
     description:
       "Drove a 19.7% AI Overview uplift for a flagship customer by restructuring entity graphs and aligning markup with LLM-parseable patterns. Published as a case study and became a key part of Schema App's sales motion.",
     pills: ["19.7% Uplift", "Published Study", "Entity Graphs"],
+  },
+  {
+    tag: "Platform Engineering",
+    title: "CDN Edge Deployment with Akamai and Cloudflare",
+    description:
+      "Led the engineering effort to ship server-side Schema Markup rendering at the edge through Akamai and Cloudflare CDN integrations. Enabled enterprise customers to serve structured data without JavaScript execution, critical for AI crawlers and governance-heavy environments.",
+    pills: ["Edge Computing", "Akamai", "Cloudflare"],
   },
 ];
 
@@ -86,10 +128,11 @@ export const roles: Role[] = [
     period: "2025 — 2026",
     team: "12 engineers",
     highlights: [
-      "Shipped MCP Server, RAG pipeline with LangChain & AWS Bedrock",
+      "Shipped MCP Server, Entity Hub, NLWeb integration, and CDN edge deployments",
+      "Built RAG pipeline with LangChain and AWS Bedrock over 50K+ entities",
       "Delivered SOC 2 Type II certification and KY3P compliance",
-      "Served as Head of IT — vendor management, CopperTree integration",
-      "Partnered with University of Guelph for co-op hiring pipeline",
+      "Led BDR agent army and Chief of Staff agent workflow projects",
+      "Served as Head of IT, vendor management, CopperTree integration",
     ],
   },
   {
@@ -99,9 +142,10 @@ export const roles: Role[] = [
     period: "2022 — 2024",
     team: "22 engineers · $3M budget",
     highlights: [
-      "Integrated GPT automation, shipped predictive NBA engine",
-      "Launched 3 product modules — all hit GA within 2 weeks of target",
-      "Cut cycle time from 9 weeks to under 5, defect escape 8% → 3%",
+      "Helped build predictive NBA engine and AI-prioritized worklists",
+      "Shipped DRS SiVA virtual agent for Canadian banks and credit unions",
+      "Launched 3 product modules, all hit GA within 2 weeks of target",
+      "Cut cycle time from 9 weeks to under 5, defect escape 8% to 3%",
       "Built promotion framework, multiple engineers moved to senior/lead",
     ],
   },
@@ -112,10 +156,10 @@ export const roles: Role[] = [
     period: "2019 — 2022",
     team: "15 developers",
     highlights: [
-      "Owned AWS cloud migration — 6 services, $1.2M savings, 99.85% uptime",
+      "Owned AWS cloud migration, 6 services, $1.2M savings, 99.85% uptime",
       "Moved releases from monthly to bi-weekly with CI/CD pipelines",
       "Introduced code review standards, on-call rotation, PR sizing",
-      "Career guidance and mentoring — multiple devs moved into lead roles",
+      "Career guidance and mentoring, multiple devs moved into lead roles",
     ],
   },
   {
@@ -125,7 +169,7 @@ export const roles: Role[] = [
     period: "2016 — 2019",
     team: "8 engineers",
     highlights: [
-      "Split monolith into microservices — 60% fewer merge conflicts",
+      "Split monolith into microservices, 60% fewer merge conflicts",
       "Integrated ML models for product recommendations",
       "Mentored developers at all levels into senior roles",
     ],
@@ -142,85 +186,58 @@ export const roles: Role[] = [
   },
 ];
 
-export const skillGroups: SkillGroup[] = [
+export const principles: Principle[] = [
   {
-    label: "Languages & Frameworks",
-    items: [
-      "Python",
-      "TypeScript",
-      "Java",
-      "Node.js",
-      "React",
-      "Next.js",
-      "Spring Boot",
-    ],
+    title: "Teams over architectures",
+    description:
+      "A mediocre system with a strong team will improve. A brilliant system with a weak team will rot. I invest in the team first.",
   },
   {
-    label: "AI & Semantic Web",
-    items: [
-      "LangChain",
-      "OpenAI API",
-      "AWS Bedrock",
-      "AWS Agentcore",
-      "RAG",
-      "Vector Embeddings",
-      "Langfuse",
-      "Knowledge Graphs",
-      "RDF",
-      "SPARQL",
-      "SHACL",
-      "JSON-LD",
-    ],
+    title: "Psychological safety isn't optional",
+    description:
+      "If your mid-level engineers won't push back on a tech lead's design, you have a culture problem that no process can fix.",
   },
   {
-    label: "Cloud & Infrastructure",
-    items: [
-      "AWS",
-      "Azure",
-      "GCP",
-      "Docker",
-      "Kubernetes",
-      "Terraform",
-      "CI/CD",
-      "Datadog",
-      "Cursor",
-    ],
+    title: "Ship, then iterate",
+    description:
+      "I'd rather ship something imperfect on Tuesday than something polished next quarter. Feedback from production beats feedback from reviews.",
   },
   {
-    label: "Leadership",
-    items: [
-      "Org Design & Scaling",
-      "Hiring Strategy",
-      "Performance Management",
-      "Career Frameworks",
-      "Roadmap Ownership",
-      "Budget Management",
-      "SOC 2 / KY3P",
-      "Agile / Scrum",
-      "PMP Certified",
-    ],
+    title: "Own the boring stuff",
+    description:
+      "Compliance, incident response, on-call rotations. The unglamorous work is where trust gets built. I don't delegate it and disappear.",
+  },
+  {
+    title: "Grow people out of their roles",
+    description:
+      "My job is to make my reports ready for the job after this one. Multiple engineers I've managed have moved into lead and senior roles.",
+  },
+  {
+    title: "Measure what matters, skip the rest",
+    description:
+      "Cycle time, defect escape rate, deployment frequency. Not story points, not lines of code, not hours logged.",
   },
 ];
 
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Akhil has a rare ability to hold both the technical and the human sides of engineering leadership at the same time. When we needed someone to own SOC 2 from scratch, he didn't just delegate it — he understood every control, worked with auditors directly, and made sure the engineering team actually internalized why it mattered. That kind of ownership is hard to find.",
-    name: "Former Director of Product",
+      "When we needed someone to own SOC 2 from scratch, Akhil didn't just delegate it. He worked with auditors directly and made sure the team understood why it mattered, not just what to do.",
+    name: "Former Director, Engineering",
     title: "Schema App",
     relationship: "Cross-functional partner",
   },
   {
     quote:
-      "I was a mid-level developer when Akhil joined. Within a year he'd restructured how we did code reviews, set up proper career ladders, and personally helped me prepare for my promotion to team lead. He wasn't just managing tickets — he was building a team that could operate without him. That's the difference.",
-    name: "Former Team Lead",
+      "He restructured how we did code reviews, set up career ladders, and helped me prepare for my promotion to team lead. He was building a team that could operate without him.",
+    name: "Former Engineering Lead",
     title: "TNGOC",
     relationship: "Direct report",
   },
   {
     quote:
-      "The cloud migration was the hardest project I've worked on — 14 months, legacy systems everywhere, and a lot of skepticism from leadership. Akhil kept the team focused, fought for the resources we needed, and made sure we shipped without a single major incident. The $1.2M in savings got all the credit, but the real win was that nobody burned out getting there.",
-    name: "Senior Developer",
+      "The cloud migration was 14 months of legacy systems and skepticism from leadership. Akhil kept us focused and shipped it without a major incident. Nobody burned out getting there, and that was the real win.",
+    name: "Senior Engineer",
     title: "TNGOC",
     relationship: "Direct report",
   },

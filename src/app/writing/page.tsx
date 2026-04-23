@@ -7,30 +7,48 @@ export const metadata: Metadata = {
     "Essays on engineering leadership, AI platforms, cloud migrations, and building high-performing teams.",
 };
 
-const upcomingTopics = [
+const published = [
   {
-    title: "What I Learned Shipping One of the First Production MCP Servers",
-    tag: "AI / MCP",
+    title: "Shipping One of the First Production MCP Servers",
+    href: "/writing/mcp-server",
+    date: "April 2026",
     description:
-      "Auth design, rate limiting, and the decisions that shaped Schema App's MCP integration.",
+      "Auth design, rate limiting, and the decisions that shaped Schema App's MCP integration. What we got right and what I'd do differently.",
   },
   {
-    title: "Leading a $1.2M Cloud Migration Without Losing Sleep (or Engineers)",
-    tag: "Cloud / Leadership",
+    title: "Building Agentic Workflows That Actually Work",
+    href: "/writing/agentic-workflows",
+    date: "April 2026",
     description:
-      "14 months, 6 services, and the playbook for moving critical infra to AWS.",
+      "BDR agents, a Chief of Staff bot, and what I learned about when AI agents help and when they just create more noise.",
   },
   {
-    title: "Why SOC 2 Compliance Made Me a Better Engineering Manager",
-    tag: "Compliance",
+    title: "Shipping Entity Hub: From Concept to Enterprise Product",
+    href: "/writing/entity-hub",
+    date: "April 2026",
     description:
-      "How owning compliance end-to-end changes how you think about engineering culture.",
+      "Building an entity management platform, integrating Google Search Console at the entity level, and learning what enterprise SEO teams actually need.",
   },
   {
-    title: "The RAG Pipeline Playbook: From 50K Entities to Production",
-    tag: "AI / ML",
+    title: "Running SOC 2 and KY3P as an Engineering Manager",
+    href: "/writing/soc2-ky3p",
+    date: "March 2026",
     description:
-      "Chunking strategies, reranking, and evaluation patterns with LangChain and Bedrock.",
+      "What it actually looks like to own compliance end to end, and why it made me better at the rest of my job.",
+  },
+  {
+    title: "Building a RAG Pipeline Over 50K Entities",
+    href: "/writing/rag-pipeline",
+    date: "March 2026",
+    description:
+      "Chunking strategies, reranking, evaluation with Langfuse, and what we learned building retrieval over a knowledge graph.",
+  },
+  {
+    title: "A $1.2M Cloud Migration in 14 Months",
+    href: "/writing/cloud-migration",
+    date: "February 2026",
+    description:
+      "Moving 6 legacy services to AWS at TNGOC. What worked, what almost didn't, and how we kept the team together.",
   },
 ];
 
@@ -40,54 +58,46 @@ export default function WritingPage() {
       <section className="px-6 sm:px-8 pb-16">
         <div className="max-w-3xl mx-auto w-full">
           <ScrollReveal>
-            <p className="text-accent font-medium text-sm uppercase tracking-widest mb-3">
-              Writing
-            </p>
             <h1 className="text-heading text-4xl sm:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
-              Thoughts on building
-              <br />
-              <span className="text-muted font-light">
-                teams &amp; systems
-              </span>
+              Writing
             </h1>
             <p className="text-muted text-lg leading-relaxed max-w-xl mb-16">
-              Essays on engineering leadership, AI in production, cloud
-              architecture, and the messy reality of managing software teams at
-              scale. Coming soon.
+              Notes on engineering leadership, AI in production, and the
+              messy reality of managing software teams. Not polished
+              thought leadership, just what I&apos;ve actually learned.
             </p>
           </ScrollReveal>
 
-          <ScrollReveal delay={100}>
-            <p className="text-heading font-semibold text-sm uppercase tracking-wider mb-6">
-              What I&apos;m working on
-            </p>
-          </ScrollReveal>
-          <div className="space-y-4">
-            {upcomingTopics.map((topic, i) => (
-              <ScrollReveal key={topic.title} delay={150 + i * 80}>
-                <div className="group bg-card rounded-xl p-6 border border-card-border/60 border-l-[3px] border-l-accent/40 hover:border-l-accent hover:shadow-md transition-all duration-300">
-                  <p className="text-heading font-medium text-base mb-1 group-hover:text-accent transition-colors duration-200">
-                    {topic.title}
+          <div className="space-y-6">
+            {published.map((post, i) => (
+              <ScrollReveal key={post.href} delay={i * 60}>
+                <a
+                  href={post.href}
+                  className="group block bg-card rounded-xl p-6 border border-card-border/60 hover:border-accent/30 hover:shadow-md transition-all duration-300"
+                >
+                  <div className="flex items-baseline justify-between gap-4 mb-2">
+                    <h2 className="text-heading font-semibold text-lg group-hover:text-accent transition-colors duration-200">
+                      {post.title}
+                    </h2>
+                    <span className="text-muted/50 text-sm shrink-0">
+                      {post.date}
+                    </span>
+                  </div>
+                  <p className="text-muted text-sm leading-relaxed">
+                    {post.description}
                   </p>
-                  <p className="text-muted text-sm mb-2 leading-relaxed">
-                    {topic.description}
-                  </p>
-                  <p className="text-accent/70 text-xs font-medium uppercase tracking-widest">
-                    {topic.tag}
-                  </p>
-                </div>
+                </a>
               </ScrollReveal>
             ))}
           </div>
 
-          <ScrollReveal delay={500}>
+          <ScrollReveal delay={400}>
             <div className="mt-16 bg-background-alt rounded-2xl p-8 border border-card-border/40">
               <p className="text-heading font-semibold text-lg mb-2">
                 Want to know when I publish?
               </p>
               <p className="text-muted text-sm mb-4">
-                Send me a note and I&apos;ll reach out when the first piece is
-                up.
+                Drop me a note and I&apos;ll let you know.
               </p>
               <a
                 href="mailto:isser.akhil@gmail.com?subject=Notify me about new essays"

@@ -48,22 +48,6 @@ export function Contact() {
         </ScrollReveal>
       </div>
       <footer className="mt-28 pb-8 text-center">
-        <div className="flex items-center justify-center gap-6 mb-4">
-          <a
-            href="https://linkedin.com/in/akhilssharma"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted/40 hover:text-accent transition-colors duration-200"
-          >
-            <LinkedInIcon />
-          </a>
-          <a
-            href="mailto:isser.akhil@gmail.com"
-            className="text-muted/40 hover:text-accent transition-colors duration-200"
-          >
-            <MailIcon />
-          </a>
-        </div>
         <p className="text-muted/40 text-xs">
           &copy; 2026 Akhil Sharma
         </p>

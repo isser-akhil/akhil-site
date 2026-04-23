@@ -3,41 +3,41 @@ import { ScrollReveal } from "./ScrollReveal";
 
 export function Testimonials() {
   return (
-    <section className="px-6 sm:px-8 py-28">
-      <div className="max-w-6xl mx-auto">
+    <section className="px-6 sm:px-8 py-24">
+      <div className="max-w-4xl mx-auto">
         <ScrollReveal>
-          <p className="text-accent font-medium text-sm uppercase tracking-widest mb-3">
-            What People Say
-          </p>
-          <h2 className="text-heading text-3xl sm:text-4xl font-bold tracking-tight mb-14">
-            Working with me
+          <h2 className="text-heading text-3xl sm:text-4xl font-bold tracking-tight mb-12">
+            From people I&apos;ve worked with
           </h2>
         </ScrollReveal>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="space-y-8">
           {testimonials.map((t, i) => (
-            <ScrollReveal key={t.name + t.title} delay={i * 100}>
-              <div className="bg-card rounded-2xl p-8 shadow-sm border border-card-border/60 hover:shadow-md hover:border-accent/20 transition-all duration-300 flex flex-col h-full">
-                <p className="text-accent/30 text-4xl font-serif leading-none mb-2">&ldquo;</p>
-                <p className="text-muted text-sm leading-relaxed mb-6 flex-1">
-                  {t.quote}
+            <ScrollReveal key={t.name + t.title} delay={i * 80}>
+              <blockquote className="border-l-2 border-accent/40 pl-6">
+                <p className="text-muted text-base leading-relaxed italic">
+                  &ldquo;{t.quote}&rdquo;
                 </p>
-                <div className="border-t border-divider pt-4">
-                  <p className="text-heading font-semibold text-sm">
-                    {t.name}
-                  </p>
-                  <p className="text-muted text-xs mt-0.5">{t.title}</p>
-                  <p className="text-accent text-xs mt-0.5">
-                    {t.relationship}
-                  </p>
-                </div>
-              </div>
+                <footer className="mt-3 text-sm">
+                  <span className="text-heading font-medium">{t.name}</span>
+                  <span className="text-muted"> · {t.title}</span>
+                  <span className="text-muted/60"> · {t.relationship}</span>
+                </footer>
+              </blockquote>
             </ScrollReveal>
           ))}
         </div>
-        <ScrollReveal delay={400}>
-          <p className="text-center text-muted/50 text-xs mt-8">
-            Names anonymized. Feedback from actual colleagues, shared with
-            permission.
+        <ScrollReveal delay={300}>
+          <p className="text-muted/50 text-xs mt-10">
+            Names withheld at their request. More on{" "}
+            <a
+              href="https://linkedin.com/in/akhilssharma"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent/60 hover:text-accent underline underline-offset-2"
+            >
+              LinkedIn
+            </a>
+            .
           </p>
         </ScrollReveal>
       </div>

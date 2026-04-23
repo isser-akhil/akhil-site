@@ -8,21 +8,22 @@ export function Hero() {
         <div className="flex flex-col-reverse md:flex-row md:items-start md:gap-16">
           <div className="flex-1">
             <div className="animate-fade-up">
-              <p className="text-accent font-medium text-lg mb-5">Hello</p>
+              <p className="text-accent font-medium text-lg mb-5">Hey, I&apos;m Akhil</p>
             </div>
             <h1 className="animate-fade-up-delay-1 text-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-8">
-              Here&apos;s who I am
+              Engineering leader
               <br />
-              <span className="text-muted font-light">&amp; what I do</span>
+              <span className="text-muted font-light">shipping AI to production</span>
             </h1>
             <div className="animate-fade-up-delay-2 text-muted text-base sm:text-lg leading-[1.8] max-w-2xl space-y-5">
               <p>
-                Engineering leader with 14+ years of experience building and
-                scaling teams across AI platforms, cloud infrastructure, and
-                enterprise SaaS.
+                I lead engineering teams that take AI from prototype to
+                production — MCP servers, RAG pipelines, agentic workflows,
+                and the infrastructure to run them at enterprise scale. 14+
+                years across AI platforms, fintech, and cloud.
               </p>
               <p>
-                I led the engineering org at{" "}
+                Most recently at{" "}
                 <a
                   href="https://www.schemaapp.com"
                   target="_blank"
@@ -31,18 +32,13 @@ export function Hero() {
                 >
                   Schema App
                 </a>
-                , where my team built an MCP-enabled knowledge graph platform
-                that lets enterprise customers expose structured data to AI
-                agents — ChatGPT, Copilot, Claude, and Gemini. Before that, I
-                managed 22 engineers at{" "}
-                <span className="text-foreground">Techcom</span> delivering
-                AI-powered decision engines for financial services, and led a{" "}
-                <span className="text-foreground">$1.2M cloud migration</span>{" "}
-                at TNGOC that moved critical mortgage infrastructure to AWS.
-              </p>
-              <p>
-                I care about building teams that ship, growing people into
-                leaders, and making complex systems work at scale. PMP-certified.
+                , I led the team that shipped their MCP Server, Entity Hub,
+                and NLWeb integration — turning a knowledge graph into the
+                data layer enterprise customers use to power AI assistants.
+                Before that at{" "}
+                <span className="text-foreground">Techcom</span>, I helped
+                build the platform&apos;s AI virtual agent and predictive
+                next-best-action engine for Canadian banks and credit unions.
               </p>
             </div>
             <div className="animate-fade-up-delay-3 flex flex-wrap items-center gap-4 sm:gap-5 mt-8">
@@ -61,7 +57,7 @@ export function Hero() {
                 className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition-colors duration-200"
               >
                 <MailIcon />
-                isser.akhil@gmail.com
+                Email
               </a>
               <span className="text-divider hidden sm:inline">|</span>
               <span className="inline-flex items-center gap-2 text-sm text-muted">
@@ -87,6 +83,7 @@ export function Hero() {
                 alt="Akhil Sharma"
                 fill
                 className="object-cover"
+                sizes="(max-width: 640px) 144px, (max-width: 768px) 176px, 208px"
                 priority
               />
             </div>
