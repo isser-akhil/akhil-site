@@ -18,7 +18,7 @@ export function FeaturedWork() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {featured.map((project, i) => (
             <ScrollReveal key={project.title} delay={i * 60}>
-              <div className="group bg-card rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300 border border-card-border/60 hover:border-accent/30 h-full border-t-[3px] border-t-accent/40 hover:border-t-accent">
+              <div className="group bg-card rounded-xl p-5 shadow-sm hover:shadow-lg transition-all duration-300 border border-card-border/60 hover:border-accent/30 h-full border-t-[3px] border-t-accent/40 hover:border-t-accent">
                 <p className="text-accent text-[11px] font-semibold uppercase tracking-widest mb-2">
                   {project.tag}
                 </p>
@@ -28,6 +28,23 @@ export function FeaturedWork() {
                 <p className="text-muted text-sm leading-relaxed">
                   {project.summary}
                 </p>
+                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out">
+                  <div className="overflow-hidden">
+                    <p className="text-muted text-sm leading-relaxed pt-3 border-t border-card-border/40 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-150">
+                      {project.pills.map((pill) => (
+                        <span
+                          key={pill}
+                          className="bg-accent-light text-accent text-[11px] font-medium px-2 py-0.5 rounded-full"
+                        >
+                          {pill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </ScrollReveal>
           ))}
