@@ -12,8 +12,6 @@ export function Hero() {
             </div>
             <h1 className="animate-fade-up-delay-1 text-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.05] mb-8">
               Engineering leader
-              <br />
-              <span className="text-muted font-light">shipping AI to production</span>
             </h1>
             <div className="animate-fade-up-delay-2 text-muted text-base sm:text-lg leading-[1.8] max-w-2xl space-y-5">
               <p>

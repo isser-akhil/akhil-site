@@ -7,7 +7,7 @@ const navLinks = [
   { href: "#work", label: "Work" },
   { href: "#career", label: "Career" },
   { href: "#skills", label: "How I Lead" },
-  { href: "/writing", label: "Writing" },
+  { href: "/writing", label: "Blogs" },
 ];
 
 export function Nav() {
