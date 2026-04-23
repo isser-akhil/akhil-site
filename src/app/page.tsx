@@ -4,6 +4,7 @@ import { FeaturedWork } from "@/components/FeaturedWork";
 import { Career } from "@/components/Career";
 import { Skills } from "@/components/Skills";
 import { Testimonials } from "@/components/Testimonials";
+import { Beyond } from "@/components/Beyond";
 import { Education } from "@/components/Education";
 import { Contact } from "@/components/Contact";
 
@@ -23,6 +24,7 @@ export default function Home() {
         <Career />
         <Skills />
         <Testimonials />
+        <Beyond />
         <Education />
         <Contact />
       </main>

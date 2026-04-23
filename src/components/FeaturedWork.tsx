@@ -1,10 +1,12 @@
 import { projects } from "@/lib/data";
 import { ScrollReveal } from "./ScrollReveal";
 
+const featured = projects.slice(0, 6);
+
 export function FeaturedWork() {
   return (
     <section id="work" className="px-6 sm:px-8 py-28 bg-background-alt">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <ScrollReveal>
           <p className="text-accent font-medium text-sm uppercase tracking-widest mb-3">
             Selected Work
@@ -13,33 +15,34 @@ export function FeaturedWork() {
             Projects &amp; Impact
           </h2>
         </ScrollReveal>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, i) => (
-            <ScrollReveal key={project.title} delay={i * 80}>
-              <div className="group bg-card rounded-2xl p-7 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col border border-card-border/60 hover:border-accent/30 h-full border-t-[3px] border-t-accent/40 hover:border-t-accent">
-                <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {featured.map((project, i) => (
+            <ScrollReveal key={project.title} delay={i * 60}>
+              <div className="group bg-card rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300 border border-card-border/60 hover:border-accent/30 h-full border-t-[3px] border-t-accent/40 hover:border-t-accent">
+                <p className="text-accent text-[11px] font-semibold uppercase tracking-widest mb-2">
                   {project.tag}
                 </p>
-                <h3 className="text-heading font-semibold text-lg mb-3 leading-snug group-hover:text-accent transition-colors duration-200">
+                <h3 className="text-heading font-semibold text-[15px] mb-2 leading-snug group-hover:text-accent transition-colors duration-200">
                   {project.title}
                 </h3>
-                <p className="text-muted text-sm leading-relaxed mb-6 flex-1">
-                  {project.description}
+                <p className="text-muted text-sm leading-relaxed">
+                  {project.summary}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.pills.map((pill) => (
-                    <span
-                      key={pill}
-                      className="bg-accent-light text-accent text-xs font-medium px-2.5 py-1 rounded-full"
-                    >
-                      {pill}
-                    </span>
-                  ))}
-                </div>
               </div>
             </ScrollReveal>
           ))}
         </div>
+        <ScrollReveal delay={400}>
+          <div className="mt-10 text-center">
+            <a
+              href="/projects"
+              className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors duration-200"
+            >
+              See all {projects.length} projects
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
